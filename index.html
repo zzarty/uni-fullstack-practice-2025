@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGOR OSTROVSKIY - CG Artist & Lighting Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                timeElement.textContent = timeString;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">zzarty.com</a>
+            </div>
+            <div class="nav-time">
+                <span id="current-time">12:00 AM</span>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-pills">
+                    <a href="index.html" class="nav-link active">Главная</a>
+                    <a href="pages/contacts.html" class="nav-link">Контакты</a>
+                    <a href="pages/goods.html" class="nav-link">Товары</a>
+                    <a href="pages/news.html" class="nav-link">Новости</a>
+                    <a href="pages/practices.html" class="nav-link">Практики</a>
+                    <div class="nav-indicator"></div>
+                </div>
+            </div>
+            <div class="nav-quote">
+                <p>We once built walls to protect ourselves.<br>Now we build mirrors to finally see each other.</p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-image">
+                <div class="placeholder-image">
+                    <!-- Placeholder for photo - replace with actual image -->
+                    <span>Photo Placeholder</span>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1>OSTROVSKIY EGOR<span class="hero-subtitle">aka ZZARTY</span></h1>
+                <div class="hero-quote">
+                        <p>The plot says to forgive everyone.</p>
+                    </div>
+                <div class="hero-description">
+                    <p>/*  CG художник и светодизайнер из Москвы, мяу.</p>
+                    <p>На сцене или экране я превращаю свет в историю и вдыхаю жизнь в цифровые миры, мур. */</p>
+                </div>
+                <div class="hero-bottom">
+                    <div class="hero-contact">
+                        <a href="https://x.com/zzartyst">x.com</a>
+                        <a href="https://t.me/zzarty">t.me</a>
+                        <a href="mailto:zzarty.st@gmail.com">zzarty.st@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="skills-section">
+            <div class="section-container">
+                <h2>/* НАВЫКИ */</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>У меня лапки</h3>
+                        <ul>
+                            <li>Мяяяяя</li>
+                            <li>Мур</li>
+                            <li>Мряв</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>У меня лапкииии</h3>
+                        <ul>
+                            <li>Мяяяяя</li>
+                            <li>Мур</li>
+                            <li>Мряв</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <div class="section-container">
+                <h2>/* ОПЫТ РАБОТЫ */</h2>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-year">2024 - Сейчас</div>
+                        <div class="experience-content">
+                            <h3>Студент</h3>
+                            <p class="company">РТУ МИРЭА</p>
+                            <p>Че так учусь, че та делаю, мяу мяу</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-year">2013 - 2024</div>
+                        <div class="experience-content">
+                            <h3>Школьник</h3>
+                            <p class="company">Какая то МБОУ СОЩ</p>
+                            <p>Cat ipsum dolor sit amet, fat baby cat best buddy little guy stare at wall turn and meow stare at wall some more meow again continue staring . Chew master's slippers. Reward the chosen human with a slow blink. Why must they do that meow go back to sleep</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-background">
+            <span class="footer-big-text">КОНЕЦ? МЯУ</span>
+        </div>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ЕГОР ОСТРОВСКИЙ</h3>
+                    <p>CG художник и светодизайнер, мур<br>Москва, Россия</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Связаться</h3>
+                    <a href="mailto:zzarty.st@gmail.com">zzarty.st@gmail.com</a>
+                    <a href="https://x.com/zzartyst">x.com</a>
+                    <a href="https://t.me/zzarty">t.me</a>
+                    <a href="https://t.me/iamzzarty">t.me/channel</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Работа, мяу</h3>
+                    <a href="https://github.com/zzarty">github.com</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Инфо</h3>
+                    <p>© 2025 ZZARTY, мур<br>Все права защищены котами</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom navigation for narrow screens -->
+    <nav class="nav-bottom">
+        <div class="nav-pills">
+            <a href="index.html" class="nav-link active">Главная</a>
+            <a href="pages/contacts.html" class="nav-link">Контакты</a>
+            <a href="pages/goods.html" class="nav-link">Goods</a>
+            <a href="pages/news.html" class="nav-link">Новости</a>
+            <a href="pages/practices.html" class="nav-link">Практики</a>
+            <div class="nav-indicator"></div>
+        </div>
+    </nav>
+</body>
+</html>
