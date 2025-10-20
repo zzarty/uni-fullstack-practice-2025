@@ -7,153 +7,111 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="../index.html">zzarty.com</a>
-            </div>
-            <div class="nav-time">
-                <span id="current-time">12:48 AM</span>
-            </div>
-            <div class="nav-menu">
-                <div class="nav-pills">
-                    <a href="../index.html" class="nav-link">Главная</a>
-                    <a href="contacts.html" class="nav-link active">Контакты</a>
-                    <a href="goods.html" class="nav-link">Товары</a>
-                    <a href="news.html" class="nav-link">Новости</a>
-                    <a href="practices.html" class="nav-link">Практики</a>
-                    <div class="nav-indicator"></div>
-                </div>
-            </div>
-            <div class="nav-quote">
-                <p>We once built walls to protect ourselves.<br>Now we build mirrors to finally see each other.</p>
-            </div>
-        </div>
-    </nav>
-
     <main class="main-content">
-        <div class="contacts-section">
-            <h1>/* КОНТАКТЫ */</h1>
-            <p>Давайте создадим что-то необычное вместе, мяу</p>
-            
-            <div class="contacts-grid">
-                <div class="contact-section">
-                    <h2>Прямая связь</h2>
-                    <div class="contact-item">
-                        <span class="contact-label">Email</span>
-                        <a href="mailto:zzarty.st@gmail.com" class="contact-link">zzarty.st@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Telegram</span>
-                        <a href="https://t.me/zzarty" class="contact-link">t.me/zzarty</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Телефон</span>
-                        <span class="contact-link">+7 (999) 123-45-67</span>
-                    </div>
-                </div>
+        <div class="contacts">
+            <div class="contacts__layout">
+                <div class="contacts__info">
+                    <div class="contacts__details">
+                        <div class="contacts__header">
+                            <h1>/* КОНТАКТЫ */</h1>
+                            <p>Давайте создадим что-то необычное вместе, мяу</p>
+                        </div>
 
-                <div class="contact-section">
-                    <h2>Соцсети и портфолио</h2>
-                    <div class="contact-item">
-                        <span class="contact-label">Twitter/X</span>
-                        <a href="https://x.com/zzartyst" class="contact-link">x.com/zzartyst</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Telegram</span>
-                        <a href="https://t.me/zzarty" class="contact-link">t.me/zzarty</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Канал</span>
-                        <a href="https://t.me/iamzzarty" class="contact-link">t.me/iamzzarty</a>
-                    </div>
-                </div>
+                        <div class="contacts__section">
+                            <h2>Прямая связь</h2>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Email</span>
+                                <a href="mailto:zzarty.st@gmail.com" class="contacts__link">zzarty.st@gmail.com</a>
+                            </div>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Telegram</span>
+                                <a href="https://t.me/zzarty" class="contacts__link">t.me/zzarty</a>
+                            </div>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Телефон</span>
+                                <span class="contacts__link">+7 (999) 123-45-67</span>
+                            </div>
+                        </div>
 
-                <div class="contact-section">
-                    <h2>Локация и доступность</h2>
-                    <div class="contact-item">
-                        <span class="contact-label">Базируюсь в</span>
-                        <span class="contact-link">Москва, Россия</span>
+                        <div class="contacts__section">
+                            <h2>Локация и доступность</h2>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Базируюсь в</span>
+                                <span class="contacts__link">Москва, Россия</span>
+                            </div>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Часовой пояс</span>
+                                <span class="contacts__link">МСК (UTC+3)</span>
+                            </div>
+                            <div class="contacts__item">
+                                <span class="contacts__label">Время ответа</span>
+                                <span class="contacts__link">В течение 24 часов, мур</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Часовой пояс</span>
-                        <span class="contact-link">МСК (UTC+3)</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">Время ответа</span>
-                        <span class="contact-link">В течение 24 часов, мур</span>
+
+                    <div class="contacts__form-wrapper">
+                        <form id="contactForm" class="contacts__form" novalidate>
+                            <div class="form__group">
+                                <label for="name" class="form__label">Имя *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name"
+                                    class="form__input"
+                                    required
+                                    minlength="2"
+                                    placeholder="Как вас зовут?"
+                                />
+                                <span class="form__error" id="nameError"></span>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    class="form__input"
+                                    required
+                                    placeholder="your@email.com"
+                                />
+                                <span class="form__error" id="emailError"></span>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="notes" class="form__label">Сообщение *</label>
+                                <textarea 
+                                    id="notes" 
+                                    name="notes"
+                                    class="form__textarea"
+                                    rows="6"
+                                    required
+                                    minlength="10"
+                                    placeholder="Расскажите о вашем проекте или вопросе, мяу..."
+                                ></textarea>
+                                <span class="form__error" id="notesError"></span>
+                            </div>
+
+                            <div class="contacts__form-actions">
+                                <button type="submit" class="button button--primary button--submit">
+                                    Отправить
+                                </button>
+                                <span class="form__status" id="formStatus"></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-background">
-            <span class="footer-big-text">КОНЕЦ? МЯУ</span>
-        </div>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>ЕГОР ОСТРОВСКИЙ</h3>
-                    <p>CG художник и светодизайнер, мур<br>Москва, Россия</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Связаться</h3>
-                    <a href="mailto:zzarty.st@gmail.com">zzarty.st@gmail.com</a>
-                    <a href="https://x.com/zzartyst">x.com</a>
-                    <a href="https://t.me/zzarty">t.me</a>
-                    <a href="https://t.me/iamzzarty">t.me/channel</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Работа, мяу</h3>
-                    <a href="https://github.com/zzarty">github.com</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Инфо</h3>
-                    <p>© 2025 ZZARTY, мур<br>Все права защищены котами</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bottom navigation for narrow screens -->
-    <nav class="nav-bottom">
-        <div class="nav-pills">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="contacts.html" class="nav-link active">Contacts</a>
-            <a href="goods.html" class="nav-link">Goods</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="practices.html" class="nav-link">Practices</a>
-            <div class="nav-indicator"></div>
-        </div>
-    </nav>
-
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            });
-            const timeElement = document.getElementById('current-time');
-            if (timeElement) {
-                timeElement.textContent = timeString;
-            }
-        }
-
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateTime();
-            setInterval(updateTime, 1000);
-        });
-    </script>
+    <script src="../scripts/cursor.js"></script>
+    <script src="../scripts/components.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/contact-form.js"></script>
 </body>
 </html>

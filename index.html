@@ -7,168 +7,112 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true
-            });
-            const timeElement = document.getElementById('current-time');
-            if (timeElement) {
-                timeElement.textContent = timeString;
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['"Geist Mono"', 'monospace'],
+                    },
+                    maxWidth: {
+                        'container': '1400px',
+                    },
+                    screens: {
+                        'sm': '480px',
+                        'md': '768px',
+                        'lg': '1200px',
+                        'xl': '1400px',
+                    }
+                }
             }
         }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateTime();
-            setInterval(updateTime, 1000);
-        });
     </script>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">zzarty.com</a>
-            </div>
-            <div class="nav-time">
-                <span id="current-time">12:00 AM</span>
-            </div>
-            <div class="nav-menu">
-                <div class="nav-pills">
-                    <a href="index.html" class="nav-link active">Главная</a>
-                    <a href="pages/contacts.html" class="nav-link">Контакты</a>
-                    <a href="pages/goods.html" class="nav-link">Товары</a>
-                    <a href="pages/news.html" class="nav-link">Новости</a>
-                    <a href="pages/practices.html" class="nav-link">Практики</a>
-                    <div class="nav-indicator"></div>
-                </div>
-            </div>
-            <div class="nav-quote">
-                <p>We once built walls to protect ourselves.<br>Now we build mirrors to finally see each other.</p>
-            </div>
-        </div>
-    </nav>
-
+</head>
+<body class="bg-black text-white m-0 p-0 overflow-y-scroll">
     <main class="main-content">
-        <div class="hero-section">
-            <div class="hero-image">
-                <div class="placeholder-image">
-                    <!-- Placeholder for photo - replace with actual image -->
+        <div class="max-w-container mx-auto px-4 pt-16 pb-16 md:px-8 grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-4 md:gap-8 min-h-auto md:min-h-[calc(100vh-120px)] items-start">
+            <div class="w-full h-full hidden md:block">
+                <div class="w-full h-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-[#666] text-[0.9rem]">
                     <span>Photo Placeholder</span>
                 </div>
             </div>
-            <div class="hero-text">
-                <h1>OSTROVSKIY EGOR<span class="hero-subtitle">aka ZZARTY</span></h1>
-                <div class="hero-quote">
-                        <p>The plot says to forgive everyone.</p>
+        
+            <div class="flex flex-col justify-between min-h-auto md:min-h-[calc(100vh-250px)] pt-2 md:pt-0">
+                <div>
+                    <h1 class="text-[3.5rem] md:text-[7rem] font-normal leading-[0.85] mb-4 md:mb-12 tracking-[-0.03em]">
+                        OSTROVSKIY EGOR
+                        <span class="block md:inline text-[1.1rem] md:text-[2.4rem] font-light tracking-[0.15rem] opacity-70 whitespace-normal md:whitespace-nowrap pl-0 md:pl-6 mt-2 md:mt-0 ml-0">aka ZZARTY</span>
+                    </h1>
+                    <div class="pb-2 ml-auto mt-auto">
+                        <p class="text-[0.85rem] text-right opacity-40">The plot says to forgive everyone.</p>
                     </div>
-                <div class="hero-description">
-                    <p>/*  CG художник и светодизайнер из Москвы, мяу.</p>
-                    <p>На сцене или экране я превращаю свет в историю и вдыхаю жизнь в цифровые миры, мур. */</p>
+                    <div class="max-w-[580px]">
+                        <p class="font-extralight text-right text-[1rem] md:text-[1.1rem] leading-[1.6] opacity-90 mb-4">/*  CG художник и светодизайнер из Москвы, мяу.</p>
+                        <p class="font-extralight text-right text-[1rem] md:text-[1.1rem] leading-[1.6] opacity-90 mb-4">На сцене или экране я превращаю свет в историю и вдыхаю жизнь в цифровые миры, мур. */</p>
+                    </div>
                 </div>
-                <div class="hero-bottom">
-                    <div class="hero-contact">
-                        <a href="https://x.com/zzartyst">x.com</a>
-                        <a href="https://t.me/zzarty">t.me</a>
-                        <a href="mailto:zzarty.st@gmail.com">zzarty.st@gmail.com</a>
+                <div class="pt-4 md:pt-32">
+                    <div class="opacity-70">
+                        <a href="https://x.com/zzartyst" class="block text-right mb-8 text-white no-underline opacity-80 hover:opacity-100 transition-opacity duration-200">x.com</a>
+                        <a href="https://t.me/zzarty" class="block text-right mb-8 text-white no-underline opacity-80 hover:opacity-100 transition-opacity duration-200">t.me</a>
+                        <a href="mailto:zzarty.st@gmail.com" class="block text-right mb-8 text-white no-underline opacity-80 hover:opacity-100 transition-opacity duration-200">zzarty.st@gmail.com</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="skills-section">
-            <div class="section-container">
-                <h2>/* НАВЫКИ */</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>У меня лапки</h3>
-                        <ul>
-                            <li>Мяяяяя</li>
-                            <li>Мур</li>
-                            <li>Мряв</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>У меня лапкииии</h3>
-                        <ul>
-                            <li>Мяяяяя</li>
-                            <li>Мур</li>
-                            <li>Мряв</li>
-                        </ul>
-                    </div>
+        <section class="max-w-container mx-auto px-4 md:px-8 pt-16 pb-16">
+            <h2 class="mb-16 opacity-80 tracking-[-0.02em]">/* НАВЫКИ */</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8">
+                <div>
+                    <h3 class="mb-6 opacity-80">У меня лапки</h3>
+                    <ul class="list-none">
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мяяяяя</li>
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мур</li>
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мряв</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 opacity-80">У меня лапкииии</h3>
+                    <ul class="list-none">
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мяяяяя</li>
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мур</li>
+                        <li class="opacity-70 mb-3 pl-4 relative before:content-['→'] before:absolute before:left-0 before:opacity-50">Мряв</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="experience-section">
-            <div class="section-container">
-                <h2>/* ОПЫТ РАБОТЫ */</h2>
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <div class="experience-year">2024 - Сейчас</div>
-                        <div class="experience-content">
-                            <h3>Студент</h3>
-                            <p class="company">РТУ МИРЭА</p>
-                            <p>Че так учусь, че та делаю, мяу мяу</p>
-                        </div>
+        <section class="max-w-container mx-auto px-4 md:px-8 pt-16 pb-16">
+            <h2 class="mb-16 opacity-80 tracking-[-0.02em]">/* ОПЫТ РАБОТЫ */</h2>
+            <div class="max-w-[900px]">
+                <div class="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-2 md:gap-12 mb-16 pb-12 border-b border-[#333]">
+                    <div class="text-[0.9rem] opacity-60 font-light">2024 - Сейчас</div>
+                    <div>
+                        <h3 class="mb-2 opacity-100">Студент</h3>
+                        <p class="text-[0.9rem] opacity-60 mb-4 italic">РТУ МИРЭА</p>
+                        <p class="opacity-80 leading-[1.6]">Че так учусь, че та делаю, мяу мяу</p>
                     </div>
-                    <div class="experience-item">
-                        <div class="experience-year">2013 - 2024</div>
-                        <div class="experience-content">
-                            <h3>Школьник</h3>
-                            <p class="company">Какая то МБОУ СОЩ</p>
-                            <p>Cat ipsum dolor sit amet, fat baby cat best buddy little guy stare at wall turn and meow stare at wall some more meow again continue staring . Chew master's slippers. Reward the chosen human with a slow blink. Why must they do that meow go back to sleep</p>
-                        </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-2 md:gap-12">
+                    <div class="text-[0.9rem] opacity-60 font-light">2013 - 2024</div>
+                    <div>
+                        <h3 class="mb-2 opacity-100">Школьник</h3>
+                        <p class="text-[0.9rem] opacity-60 mb-4 italic">Какая то МБОУ СОЩ</p>
+                        <p class="opacity-80 leading-[1.6]">Cat ipsum dolor sit amet, fat baby cat best buddy little guy stare at wall turn and meow stare at wall some more meow again continue staring . Chew master's slippers. Reward the chosen human with a slow blink. Why must they do that meow go back to sleep</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-background">
-            <span class="footer-big-text">КОНЕЦ? МЯУ</span>
-        </div>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>ЕГОР ОСТРОВСКИЙ</h3>
-                    <p>CG художник и светодизайнер, мур<br>Москва, Россия</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Связаться</h3>
-                    <a href="mailto:zzarty.st@gmail.com">zzarty.st@gmail.com</a>
-                    <a href="https://x.com/zzartyst">x.com</a>
-                    <a href="https://t.me/zzarty">t.me</a>
-                    <a href="https://t.me/iamzzarty">t.me/channel</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Работа, мяу</h3>
-                    <a href="https://github.com/zzarty">github.com</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Инфо</h3>
-                    <p>© 2025 ZZARTY, мур<br>Все права защищены котами</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bottom navigation for narrow screens -->
-    <nav class="nav-bottom">
-        <div class="nav-pills">
-            <a href="index.html" class="nav-link active">Главная</a>
-            <a href="pages/contacts.html" class="nav-link">Контакты</a>
-            <a href="pages/goods.html" class="nav-link">Goods</a>
-            <a href="pages/news.html" class="nav-link">Новости</a>
-            <a href="pages/practices.html" class="nav-link">Практики</a>
-            <div class="nav-indicator"></div>
-        </div>
-    </nav>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/components.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
