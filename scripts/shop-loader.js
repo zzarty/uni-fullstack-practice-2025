@@ -127,13 +127,42 @@
                 return;
             }
 
-            const promises = productFiles.map(file => 
-                fetch('../' + file)
-                    .then(response => {
-                        if (!response.ok) throw new Error(`Failed to load ${file}`);
-                        return response.text();
-                    })
-                    .then(parseProduct)
+            function fetchWithFallback(relativeFile) {
+                const candidates = [];
+
+                candidates.push(relativeFile);
+
+                candidates.push('../' + relativeFile);
+
+                try {
+                    const segments = location.pathname.split('/').filter(Boolean);
+                    if (segments.length > 0) {
+                        const repoBase = '/' + segments[0];
+                        candidates.push(location.origin + repoBase + '/' + relativeFile);
+                    }
+                } catch (e) {
+                    // ignore
+                }
+
+                candidates.push(location.origin + '/' + relativeFile);
+
+                let lastErr = null;
+                return (async () => {
+                    for (const url of candidates) {
+                        try {
+                            const res = await fetch(url);
+                            if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+                            return res.text();
+                        } catch (err) {
+                            lastErr = err;
+                        }
+                    }
+                    throw lastErr || new Error(`Failed to fetch ${relativeFile}`);
+                })();
+            }
+
+            const promises = productFiles.map(file =>
+                fetchWithFallback(file).then(parseProduct)
             );
 
             const products = await Promise.all(promises);

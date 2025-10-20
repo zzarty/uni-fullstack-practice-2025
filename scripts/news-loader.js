@@ -89,13 +89,42 @@
                 return;
             }
 
-            const promises = newsFiles.map(file => 
-                fetch('../' + file)
-                    .then(response => {
-                        if (!response.ok) throw new Error(`Failed to load ${file}`);
-                        return response.text();
-                    })
-                    .then(parseMarkdown)
+            function fetchWithFallback(relativeFile) {
+                const candidates = [];
+
+                candidates.push(relativeFile);
+
+                candidates.push('../' + relativeFile);
+
+                try {
+                    const segments = location.pathname.split('/').filter(Boolean);
+                    if (segments.length > 0) {
+                        const repoBase = '/' + segments[0];
+                        candidates.push(location.origin + repoBase + '/' + relativeFile);
+                    }
+                } catch (e) {
+                    // ignore
+                }
+
+                candidates.push(location.origin + '/' + relativeFile);
+
+                let lastErr = null;
+                return (async () => {
+                    for (const url of candidates) {
+                        try {
+                            const res = await fetch(url);
+                            if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+                            return res.text();
+                        } catch (err) {
+                            lastErr = err;
+                        }
+                    }
+                    throw lastErr || new Error(`Failed to fetch ${relativeFile}`);
+                })();
+            }
+
+            const promises = newsFiles.map(file =>
+                fetchWithFallback(file).then(parseMarkdown)
             );
 
             const articles = await Promise.all(promises);
